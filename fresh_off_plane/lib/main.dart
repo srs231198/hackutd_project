@@ -60,11 +60,7 @@ class FirstRoute extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-<<<<<<< HEAD
-                      MaterialPageRoute(builder: (context) => const ChooseIndustry()),
-=======
                       MaterialPageRoute(builder: (context) => ChooseIndustry()),
->>>>>>> cf6ab5f0f8e32ad8b26fcdf9fee0cdda40d89c2e
                     );
                   },
                 ),
@@ -294,6 +290,44 @@ class Financial extends StatelessWidget {
             ]
         ),
       ),
+    );
+  }
+}
+
+class CourseHelper extends StatelessWidget {
+  const CourseHelper({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Course Finder"),
+        ),
+        body: Center(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget> [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChooseIndustry()),
+                    );
+                  },
+                  child: const Text("I need major ideas"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Positions()),
+                    );
+                  },
+                  child: const Text("I know my major, and I need course ideas"),
+                ),
+              ]
+          ),
+        )
     );
   }
 }
