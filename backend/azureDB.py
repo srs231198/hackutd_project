@@ -4,7 +4,7 @@ import psycopg2
 host = "freshoff.postgres.database.azure.com"
 dbname = "postgres"
 user = "freshoff@freshoff"
-password = "y_eUbwd3Pm"
+password = "GK!RUm2Wt-"
 sslmode = "disable"
 
 # Drop previous table of same name if one exists
@@ -29,6 +29,7 @@ def upload_graduates(industry, major, position, courses):
     cursor = conn.cursor()
     for course in courses:
         cursor.execute("INSERT INTO graduates (industry, major, role, course) VALUES (%s, %s, %s, %s);", (industry, major, position, course))
+    conn.commit()
     conn.close()
     cursor.close()
     return
@@ -37,16 +38,33 @@ def upload_graduates(industry, major, position, courses):
 def get_courses(industry, major, position):
     conn = psycopg2.connect(conn_string)
     cursor = conn.cursor()
+    
     cursor.execute("SELECT course FROM graduates WHERE major = %s AND role = %s AND industry = %s;", (major, position, industry))
+    
+    val = cursor.fetchall()
     conn.close()
     cursor.close()
-    return
+    
+    return val
 
 
 def get_majors(industry):
     conn = psycopg2.connect(conn_string)
     cursor = conn.cursor()
-    cursor.execute("SELECT major FROM graduates WHERE industry = %s;", (industry))
+    cursor.execute("SELECT major FROM graduates WHERE industry = '{0}';".format(industry))
+    val = cursor.fetchall()
     conn.close()
     cursor.close()
-    return
+    
+    return val
+
+if __name__ == "__main__":
+
+    ECS_majors = ["CS", "SE", "ME", "EE", "DS", "ITS"]
+    roles = ["IC", "Supervisor", "Manager", "Executive"]
+    industries = ["Construction", "Technology", "Space", "Information Technology", "Robotics"]
+
+    print(get_courses("Technology", "SE", "IC"))
+    print("%%%%%%%%%%%%%%%%%%%%%")
+    print(get_majors("Robotics"))
+    
