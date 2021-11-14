@@ -7,13 +7,6 @@ user = "freshoff@freshoff"
 password = "y_eUbwd3Pm"
 sslmode = "disable"
 
-# Construct connection string
-conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
-conn = psycopg2.connect(conn_string)
-print("Connection established")
-
-cursor = conn.cursor()
-
 # Drop previous table of same name if one exists
 # cursor.execute("DROP TABLE IF EXISTS inventory;")
 # print("Finished dropping table (if existed)")
@@ -29,6 +22,31 @@ cursor = conn.cursor()
 # print("Inserted 3 rows of data")
 
 # Clean up
-conn.commit()
-cursor.close()
-conn.close()
+conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
+
+def upload_graduates(industry, major, position, courses):
+    conn = psycopg2.connect(conn_string)
+    cursor = conn.cursor()
+    for course in courses:
+        cursor.execute("INSERT INTO graduates (industry, major, role, course) VALUES (%s, %s, %s, %s);", (industry, major, position, course))
+    conn.close()
+    cursor.close()
+    return
+
+
+def get_courses(industry, major, position):
+    conn = psycopg2.connect(conn_string)
+    cursor = conn.cursor()
+    cursor.execute("SELECT course FROM graduates WHERE major = %s AND role = %s AND industry = %s;", (major, position, industry))
+    conn.close()
+    cursor.close()
+    return
+
+
+def get_majors(industry):
+    conn = psycopg2.connect(conn_string)
+    cursor = conn.cursor()
+    cursor.execute("SELECT major FROM graduates WHERE industry = %s;", (industry))
+    conn.close()
+    cursor.close()
+    return
