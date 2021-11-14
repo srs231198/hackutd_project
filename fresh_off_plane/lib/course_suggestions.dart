@@ -3,6 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'globals.dart';
 import 'course_sections.dart';
 
+var courseNames = ['broccoli', 'cabbage'];
+
 class CourseSuggestions extends StatefulWidget {
   @override
   _CourseSuggestionsState createState() => _CourseSuggestionsState();
