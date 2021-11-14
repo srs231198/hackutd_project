@@ -1,2 +1,4 @@
 # Exclude pycache
 __pycache__
+
+*.env
