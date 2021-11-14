@@ -11,6 +11,9 @@ class test:
             "Authorization": "dd1h55UQUb8x5nQIPW2iJ1ABaIDx9iv7"
         }
 
+        self.rec_m = []
+        self.rec_c = []
+
     
     # get the json input from nebula based on course prefix
     def get_json_course_prefix(self, cf: str) -> str:

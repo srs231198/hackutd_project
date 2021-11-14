@@ -10,6 +10,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI()
+obj = test()
 
 # ["CS", "SE", "ACCT"]
 # ["CS 2336", "CS 1337", "CS 4301"]
@@ -36,7 +37,7 @@ def return_major():
 
     # return recommended_majors
 
-    return recommended_majors
+    return obj.rec_m
 
 # GET request to return the recommended classes for the user
 @app.get("/classes/")
@@ -45,7 +46,7 @@ def return_classes():
     # recommended_classes = obj.courses
     # return recommended_classes
 
-    return recommended_courses
+    return obj.rec_c
 
 # POST request to 
 # {
@@ -58,7 +59,9 @@ def return_classes():
 def student_info(info: graduate_info):
 
     recommended_majors = get_majors(info.industry)
+    obj.rec_m = recommended_majors
     recommended_courses = get_courses(info.industry, info.major, info.role)
+    obj.rec_c = recommended_courses
 
     return [recommended_courses, recommended_majors]
 
