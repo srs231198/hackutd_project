@@ -71,6 +71,16 @@ class FirstRoute extends StatelessWidget {
                     );
                   },
                 ),
+                ElevatedButton(
+                  child: const Text('OIT FAQs'),
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FAQs()),
+                    );
+                  },
+                ),
               ]
           )
       ),
@@ -362,6 +372,88 @@ class CourseHelper extends StatelessWidget {
   }
 }
 
+class FAQs extends StatelessWidget {
+  const FAQs({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFe87500),
+        title: const Text("Office of Information Technology FAQs"),
+      ),
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget> [
+              const Text(
+                'How to Reset Your Password: ',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
+                onPressed: () {
+                  _launchPassBrowser();
+                },
+                child: const Text('OIT Reset Password'),
+              ),
+              const Text(
+                '\nThe iComet Portal is finnicky and requires login via UTD-ID instead of NetID.',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
+                onPressed: () {
+                  _launchiCometBrowser();
+                },
+                child: const Text('iComet Portal'),
+              ),
+              const Text(
+                '\nRequesting Transcripts from UTD',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
+                onPressed: () {
+                  _launchTransBrowser();
+                },
+                child: const Text('UTD Registrar'),
+              ),
+              const Text(
+                '\n\n\n\n\n\n\n',
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFF808080)),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Go back'),
+              ),
+            ]
+        ),
+      ),
+    );
+  }
+}
+
+_launchiCometBrowser() async {
+  const url = 'https://icomet.utdallas.edu/istart/controllers/start/StartEngine.cfm';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchTransBrowser() async {
+  const url = 'https://registrar.utdallas.edu/transcript/official/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 _launchGalaxyBrowser() async {
   const url = 'https://www.utdallas.edu/galaxy/';
   if (await canLaunch(url)) {
@@ -409,6 +501,15 @@ _launchEBrowser() async {
 
 _launchInsBrowser() async {
   const url = 'https://insurance.utdallas.edu/policies/international/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchPassBrowser() async {
+  const url = 'https://oit.utdallas.edu/netid/self-service/';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
