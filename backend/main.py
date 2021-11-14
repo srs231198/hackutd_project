@@ -2,6 +2,7 @@ from types import resolve_bases
 from typing import Optional
 import json
 from Nebula import test
+from azureDB import get_majors, get_courses
 
 import uvicorn
 
@@ -17,34 +18,34 @@ ECS_majors = ["CS", "SE", "ME", "EE", "DS", "ITS"]
 roles = ["IC", "Supervisor", "Manager", "Executive"]
 industries = ["Construction", "Technology", "Space", "Information Technology", "Robotics"]
 
+recommended_majors = []
+recommended_courses = []
 
 # Base model schema for the graduate info
 # which will be provided in the request body of the POST request
 # with the "/graduate/" path
 class graduate_info(BaseModel):
     industry: str
+    major: str
     role: str
     courses: str
 
 # GET request to return the recommended majors fo the user
 @app.get("/majors/")
 def return_major():
-    
-    obj = test()
 
     # return recommended_majors
 
-    return obj.return_majors()
+    return recommended_majors
 
 # GET request to return the recommended classes for the user
 @app.get("/classes/")
 def return_classes():
-    obj = test()
 
     # recommended_classes = obj.courses
-
     # return recommended_classes
-    return "classes"
+
+    return recommended_courses
 
 # POST request to 
 # {
@@ -55,7 +56,11 @@ def return_classes():
 
 @app.post("/graduate/")
 def student_info(info: graduate_info):
-    return info
+
+    recommended_majors = get_majors(info.industry)
+    recommended_courses = get_courses(info.industry, info.major, info.role)
+
+    return [recommended_courses, recommended_majors]
 
 
 # main method meant for testing
