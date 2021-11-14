@@ -21,8 +21,10 @@ class FirstRoute extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
-                Text(
-                  'Congrats and welcome to the University of Texas at Dallas!',
+                const Text(
+                  'Welcome to the University of Texas at Dallas! This app can help guide you with helpful info to ease your journey into becoming a successful UTD student.\n',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 25),
                 ),
                 ElevatedButton(
                   child: const Text('Important Links'),
@@ -39,6 +41,15 @@ class FirstRoute extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const Insurance()),
+                    );
+                  },
+                ),
+                ElevatedButton(
+                  child: const Text('Financial Literacy Learner'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Financial()),
                     );
                   },
                 ),
@@ -73,7 +84,8 @@ class LinksPage extends StatelessWidget {
             children: <Widget> [
               const Text(
                 'Important Links: ',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+
               ),
               const Text(
                 '\neLearning (Grades, Assignments, Announcements)',
@@ -191,9 +203,78 @@ class Insurance extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  _launchRenterBrowser();
+                  _launchTravelBrowser();
                 },
                 child: const Text('Seven Corners'),
+              ),
+              const Text(
+                '\n\n\n\n\n\n\n',
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('Go back'),
+              ),
+            ]
+        ),
+      ),
+    );
+  }
+}
+
+class Financial extends StatelessWidget {
+  const Financial({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Financial Literacy"),
+      ),
+      body: Center(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget> [
+              const Text(
+                'What is a Credit Score? Why Does It Matter?',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  _launchGovBrowser();
+                },
+                child: const Text('ConsumerFinance.Gov'),
+              ),
+              const Text(
+                '\nStudent Credit Card, Discover It:',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  _launchDiscBrowser();
+                },
+                child: const Text('Discover It Student'),
+              ),
+              const Text(
+                '\nWhat is a Roth IRA? And why one should create one:',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  _launchIRABrowser();
+                },
+                child: const Text('IRS: Roth IRA'),
+              ),
+              const Text(
+                '\nHow to File Your Taxes For Free:',
+                textAlign: TextAlign.center,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  _launchTurboBrowser();
+                },
+                child: const Text('TurboTax Free'),
               ),
               const Text(
                 '\n\n\n\n\n\n\n',
@@ -332,6 +413,42 @@ _launchRenterBrowser() async {
 
 _launchTravelBrowser() async {
   const url = 'https://www.sevencorners.com/#start';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchGovBrowser() async {
+  const url = 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-score-en-315/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchDiscBrowser() async {
+  const url = 'https://www.discover.com/credit-cards/student-credit-card/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchIRABrowser() async {
+  const url = 'https://www.irs.gov/retirement-plans/roth-iras';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_launchTurboBrowser() async {
+  const url = 'https://turbotax.intuit.com/personal-taxes/online/free-edition.jsp';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
