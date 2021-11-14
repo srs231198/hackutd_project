@@ -4,7 +4,7 @@ import psycopg2
 host = "freshoff.postgres.database.azure.com"
 dbname = "postgres"
 user = "freshoff@freshoff"
-password = "GK!RUm2Wt-"
+password = ""
 sslmode = "disable"
 
 # Drop previous table of same name if one exists
@@ -39,7 +39,7 @@ def get_courses(industry, major, position):
     conn = psycopg2.connect(conn_string)
     cursor = conn.cursor()
     
-    cursor.execute("SELECT course FROM graduates WHERE major = %s AND role = %s AND industry = %s;", (major, position, industry))
+    cursor.execute("SELECT course, COUNT(*) FROM graduates WHERE major = %s AND role = %s AND industry = %s group by course order by 2 DESC limit 10;", (major, position, industry))
     
     val = cursor.fetchall()
     conn.close()
@@ -51,7 +51,7 @@ def get_courses(industry, major, position):
 def get_majors(industry):
     conn = psycopg2.connect(conn_string)
     cursor = conn.cursor()
-    cursor.execute("SELECT major FROM graduates WHERE industry = '{0}';".format(industry))
+    cursor.execute("SELECT major, COUNT(*) FROM graduates WHERE industry = '{0}' group by major order by 2 DESC limit 3;".format(industry))
     val = cursor.fetchall()
     conn.close()
     cursor.close()
