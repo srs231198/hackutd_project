@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'majorIdeasIndustry.dart';
+import 'choose_industry.dart';
 
 class Positions extends StatelessWidget {
   const Positions({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class Positions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Positions"),
+          title: const Text("Choose Position"),
         ),
         body: Center(
           child: Column(
@@ -23,7 +23,7 @@ class Positions extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MajorIdeasIndustry()),
+                      MaterialPageRoute(builder: (context) => Positions()),
                     );
                   },
                   child: const Text("Individual Contributor"),
@@ -32,7 +32,7 @@ class Positions extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FirstRoute()),
+                      MaterialPageRoute(builder: (context) => Positions()),
                     );
                   },
                   child: const Text("Supervisor Position"),
@@ -41,7 +41,7 @@ class Positions extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FirstRoute()),
+                      MaterialPageRoute(builder: (context) => Positions()),
                     );
                   },
                   child: const Text("Manager Position"),
@@ -50,7 +50,7 @@ class Positions extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FirstRoute()),
+                      MaterialPageRoute(builder: (context) => Positions()),
                     );
                   },
                   child: const Text("Executive Position"),

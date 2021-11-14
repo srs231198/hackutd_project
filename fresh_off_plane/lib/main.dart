@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'majorIdeasIndustry.dart';
-import 'positions.dart';
+import 'choose_industry.dart';
+import 'choose_position.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -56,11 +56,11 @@ class FirstRoute extends StatelessWidget {
                   },
                 ),
                 ElevatedButton(
-                  child: const Text('page4 classes?'),
+                  child: const Text('Course suggestions'),
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const CourseHelper()),
+                      MaterialPageRoute(builder: (context) => ChooseIndustry()),
                     );
                   },
                 ),
@@ -311,7 +311,7 @@ class CourseHelper extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MajorIdeasIndustry()),
+                      MaterialPageRoute(builder: (context) => ChooseIndustry()),
                     );
                   },
                   child: const Text("I need major ideas"),
