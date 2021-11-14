@@ -16,6 +16,7 @@ class _ChooseMajor extends State<ChooseMajor> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFFe87500),
           title: const Text("Choose Major"),
         ),
         body: Center(
@@ -23,6 +24,7 @@ class _ChooseMajor extends State<ChooseMajor> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                   onPressed: () {
                     gpassedMajor = "Computer Science";
                     Navigator.push(
@@ -33,6 +35,7 @@ class _ChooseMajor extends State<ChooseMajor> {
                   child: const Text("Computer Science"),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                   onPressed: () {
                     gpassedMajor = "Software Engineering";
                     Navigator.push(
@@ -43,6 +46,7 @@ class _ChooseMajor extends State<ChooseMajor> {
                   child: const Text("Software Engineering"),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                   onPressed: () {
                     gpassedMajor = "Data Science";
                     Navigator.push(
@@ -53,6 +57,7 @@ class _ChooseMajor extends State<ChooseMajor> {
                   child: const Text("Data Science"),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                   onPressed: () {
                     gpassedMajor = "Computer Engineering";
                     Navigator.push(

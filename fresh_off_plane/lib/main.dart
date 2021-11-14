@@ -4,8 +4,10 @@ import 'choose_industry.dart';
 import 'choose_position.dart';
 
 void main() {
+  const primaryColor = Color(0xFF151026);
   runApp(const MaterialApp(
     title: 'Fresh Off The Plane',
+
     home: FirstRoute(),
   ));
 }
@@ -17,6 +19,7 @@ class FirstRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFe87500),
         title: const Text('Fresh Off The Plane Home Page'),
       ),
       body: Center(
@@ -36,6 +39,7 @@ class FirstRoute extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const LinksPage()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 ),
                 ElevatedButton(
                   child: const Text('Insurance Info'),
@@ -45,6 +49,7 @@ class FirstRoute extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Insurance()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 ),
                 ElevatedButton(
                   child: const Text('Financial Literacy Learner'),
@@ -54,9 +59,11 @@ class FirstRoute extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Financial()),
                     );
                   },
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 ),
                 ElevatedButton(
-                  child: const Text('Course suggestions'),
+                  child: const Text('Course Suggestions'),
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -78,6 +85,7 @@ class LinksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFe87500),
         title: const Text("Important links"),
       ),
       body: Center(
@@ -93,6 +101,7 @@ class LinksPage extends StatelessWidget {
                 '\neLearning (Grades, Assignments, Announcements)',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchEBrowser();
                 },
@@ -102,6 +111,7 @@ class LinksPage extends StatelessWidget {
                 '\nGalaxy (Academics, Bursar, Financial Aid, Forms, etc)',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchGalaxyBrowser();
                 },
@@ -111,6 +121,7 @@ class LinksPage extends StatelessWidget {
                 '\nCoursebook (Listing of Classes)',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchCoursebookBrowser();
                 },
@@ -120,6 +131,7 @@ class LinksPage extends StatelessWidget {
                 '\nOffice of Information Technology (Tech Help)',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchOITBrowser();
                 },
@@ -129,6 +141,7 @@ class LinksPage extends StatelessWidget {
                 '\nBursar Office (EZPay, Tuition, Fees)',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchBursarBrowser();
                 },
@@ -138,6 +151,7 @@ class LinksPage extends StatelessWidget {
                 '\n\n\n\n\n\n\n\n\n',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -157,6 +171,7 @@ class Insurance extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFe87500),
         title: const Text("Insurance Info"),
       ),
       body: Center(
@@ -168,6 +183,7 @@ class Insurance extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchInsBrowser();
                 },
@@ -178,12 +194,14 @@ class Insurance extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchDentalBrowser();
                 },
                 child: const Text('BlueCare Dental'),
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchVisionBrowser();
                 },
@@ -194,6 +212,7 @@ class Insurance extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchRenterBrowser();
                 },
@@ -204,6 +223,7 @@ class Insurance extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchTravelBrowser();
                 },
@@ -213,6 +233,7 @@ class Insurance extends StatelessWidget {
                 '\n\n\n\n\n\n\n',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -232,6 +253,7 @@ class Financial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFe87500),
         title: const Text("Financial Literacy"),
       ),
       body: Center(
@@ -243,6 +265,7 @@ class Financial extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchGovBrowser();
                 },
@@ -253,6 +276,7 @@ class Financial extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchDiscBrowser();
                 },
@@ -263,6 +287,7 @@ class Financial extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchIRABrowser();
                 },
@@ -273,6 +298,7 @@ class Financial extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   _launchTurboBrowser();
                 },
@@ -282,6 +308,7 @@ class Financial extends StatelessWidget {
                 '\n\n\n\n\n\n\n',
               ),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -301,6 +328,7 @@ class CourseHelper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFFe87500),
           title: const Text("Course Finder"),
         ),
         body: Center(
@@ -308,6 +336,7 @@ class CourseHelper extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -317,6 +346,7 @@ class CourseHelper extends StatelessWidget {
                   child: const Text("I need major ideas"),
                 ),
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
                   onPressed: () {
                     Navigator.push(
                       context,

@@ -15,6 +15,7 @@ class _ChooseIndustry extends State<ChooseIndustry> {
   Widget build(BuildContext context) {
     return Scaffold (
       appBar: AppBar(
+        backgroundColor: const Color(0xFFe87500),
         title: const Text("Choose Industry"),
       ),
       body: Center(
@@ -47,6 +48,7 @@ class _ChooseIndustry extends State<ChooseIndustry> {
               }).toList(),
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
               onPressed: () {
                 Navigator.push(
                   context,
