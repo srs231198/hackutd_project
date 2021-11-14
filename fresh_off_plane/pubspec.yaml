@@ -24,7 +24,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "fotp2.png"
+  image_path: "utdd.png"
 
 flutter:
 

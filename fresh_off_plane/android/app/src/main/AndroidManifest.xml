@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fresh_off_plane">
    <application
-        android:label="Fresh"
+        android:label="Fresh Off The Plane"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
