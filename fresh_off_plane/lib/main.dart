@@ -39,11 +39,11 @@ class FirstRoute extends StatelessWidget {
               },
             ),
             ElevatedButton(
-              child: const Text('page4 classes?'),
+              child: const Text('Help me choose courses'),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const FourthRoute()),
+                  MaterialPageRoute(builder: (context) => const CourseHelper()),
                 );
               },
             ),
@@ -61,19 +61,14 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("important links"),
+        title: const Text("page 2, something something important links"),
       ),
       body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Go back!'),
-              ),
-            ]
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
         ),
       ),
     );
@@ -87,47 +82,54 @@ class ThirdRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("pageno333"),
+        title: const Text("page 3, insurance ? if we are doing something"),
       ),
       body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Go back!'),
-              ),
-            ]
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
         ),
       ),
     );
   }
 }
 
-class FourthRoute extends StatelessWidget {
-  const FourthRoute({Key? key}) : super(key: key);
+class CourseHelper extends StatelessWidget {
+  const CourseHelper({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("pageno4 classes"),
+        title: const Text("Course helper"),
       ),
       body: Center(
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Go back!'),
-              ),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MajorIdeas()),
+                );
+              },
+              child: const Text("I need major ideas"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CourseIdeas()),
+                );
+              },
+              child: const Text("I know my major, and I need course ideas"),
+            ),
           ]
         ),
-      ),
+      )
     );
   }
 }
