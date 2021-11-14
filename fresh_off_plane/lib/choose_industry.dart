@@ -1,31 +1,21 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'choose_major.dart';
+import 'globals.dart';
 
 class ChooseIndustry extends StatefulWidget {
   @override
-<<<<<<< HEAD:fresh_off_plane/lib/choose_industry.dart
-  _ChooseIndustryState createState() => _ChooseIndustryState();
-}
-
-class _ChooseIndustryState extends State<ChooseIndustry> {
-=======
   _ChooseIndustry createState() => _ChooseIndustry();
 }
 
 class _ChooseIndustry extends State<ChooseIndustry> {
->>>>>>> cf6ab5f0f8e32ad8b26fcdf9fee0cdda40d89c2e:fresh_off_plane/lib/majorIdeasIndustry.dart
   String industry = 'Information Technology';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold (
       appBar: AppBar(
-<<<<<<< HEAD:fresh_off_plane/lib/choose_industry.dart
-        title: const Text("Course suggester"),
-=======
         title: const Text("Choose Industry"),
->>>>>>> cf6ab5f0f8e32ad8b26fcdf9fee0cdda40d89c2e:fresh_off_plane/lib/majorIdeasIndustry.dart
       ),
       body: Center(
         child: Column(
@@ -45,6 +35,7 @@ class _ChooseIndustry extends State<ChooseIndustry> {
               onChanged: (String? newValue) {
                 setState(() {
                   industry = newValue!;
+                  gpassedIndustry = newValue!;
                 });
               },
               items: <String>["Information Technology", "Healthcare", "Education"]
@@ -59,7 +50,7 @@ class _ChooseIndustry extends State<ChooseIndustry> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ChooseMajor(passedIndustry: industry,)),
+                  MaterialPageRoute(builder: (context) => ChooseMajor()),
                 );
               },
               child: const Text("Next"),

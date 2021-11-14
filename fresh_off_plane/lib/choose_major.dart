@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_off_plane/globals.dart';
 import 'main.dart';
 import 'choose_industry.dart';
 import 'choose_position.dart';
-import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 class ChooseMajor extends StatefulWidget {
-  final String? passedString;
-  final String? passedIndustry;
-  const ChooseMajor({Key? key, this.passedString, this.passedIndustry}) : super(key: key);
-
   @override
   _ChooseMajor createState() => _ChooseMajor();
 }
@@ -26,16 +24,47 @@ class _ChooseMajor extends State<ChooseMajor> {
               children: <Widget> [
                 ElevatedButton(
                   onPressed: () {
+                    gpassedMajor = "Computer Science";
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Positions()),
+                      MaterialPageRoute(builder: (context) => const Positions()),
                     );
                   },
-                  child: Text('${widget.passedIndustry}'),
+                  child: const Text("Computer Science"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    gpassedMajor = "Software Engineering";
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Positions()),
+                    );
+                  },
+                  child: const Text("Software Engineering"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    gpassedMajor = "Data Science";
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Positions()),
+                    );
+                  },
+                  child: const Text("Data Science"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    gpassedMajor = "Computer Engineering";
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Positions()),
+                    );
+                  },
+                  child: const Text("Computer Engineering"),
                 ),
               ]
           ),
-        )
+        ),
     );
   }
 }

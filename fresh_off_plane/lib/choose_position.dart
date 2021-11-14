@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'choose_industry.dart';
+import 'globals.dart';
 
 class Positions extends StatelessWidget {
   const Positions({Key? key}) : super(key: key);
@@ -15,12 +16,13 @@ class Positions extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
-                const Text(
-                  'What Position in Computer Science?',
+                Text(
+                  'What Position in ${gpassedMajor}?',
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    gpassedPosition = "Individual Contributor";
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Positions()),
@@ -30,6 +32,7 @@ class Positions extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    gpassedPosition = "Supervisor Position";
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Positions()),
@@ -39,6 +42,7 @@ class Positions extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    gpassedPosition = "Manager Position";
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Positions()),
@@ -48,6 +52,7 @@ class Positions extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    gpassedPosition = "Executive Position";
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => Positions()),

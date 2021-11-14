@@ -5,29 +5,21 @@ class CourseSuggestions extends StatefulWidget {
   @override
   _CourseSuggestionsState createState() => _CourseSuggestionsState();
 }
-
 class _CourseSuggestionsState extends State<CourseSuggestions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
-      appBar: AppBar(
-        title: const Text("Course suggester"),
-      ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemBuilder: (BuildContext _context, int i) {
-          if (i.isOdd) {
-            return Divider();
-          }
-          final int index = i ~/ 2;
-          return _buildRow(courseNames[index]);
-        }
-      ),
-    );
-  }
-  Widget _buildRow(String courseName) {
-    return ListTile(
-      title: Text(courseName),
+        appBar: AppBar(
+          title: const Text("Course Suggestions"),
+        ),
+        body: Center(
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget> [
+
+        ]
+    ),
+    )
     );
   }
 }
