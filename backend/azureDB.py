@@ -1,10 +1,13 @@
 import psycopg2
+from decouple import config
 
 # Update connection string information
 host = "freshoff.postgres.database.azure.com"
 dbname = "postgres"
 user = "freshoff@freshoff"
-password = "GK!RUm2Wt-"
+
+password = config("AZURE_PWD")
+
 sslmode = "disable"
 
 # Drop previous table of same name if one exists

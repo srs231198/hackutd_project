@@ -9,8 +9,13 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 app = FastAPI()
+
 # ["CS", "SE", "ACCT"]
 # ["CS 2336", "CS 1337", "CS 4301"]
+
+ECS_majors = ["CS", "SE", "ME", "EE", "DS", "ITS"]
+roles = ["IC", "Supervisor", "Manager", "Executive"]
+industries = ["Construction", "Technology", "Space", "Information Technology", "Robotics"]
 
 
 # Base model schema for the graduate info
@@ -24,9 +29,8 @@ class graduate_info(BaseModel):
 # GET request to return the recommended majors fo the user
 @app.get("/majors/")
 def return_major():
+    
     obj = test()
-
-    # recommended_majors = obj.majors
 
     # return recommended_majors
 
@@ -57,8 +61,6 @@ def student_info(info: graduate_info):
 # main method meant for testing
 if __name__ == "__main__":
 
+    # initialize and run the app
     uvicorn.run("main:app", host="127.0.0.1", port=5000, log_level="info")
-    # print("%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    # print(obj.majors)
-    # print("%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    # print(obj.courses)
+    
