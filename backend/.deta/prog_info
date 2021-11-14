@@ -1,0 +1,1 @@
+{"id":"0fc96cbe-ab41-4085-8490-b32ffcd25459","space":13328,"runtime":"python3.9","name":"backend","path":"qbf4t4","project":"b0col89k","account":"144798365827","region":"us-east-1","deps":["fastapi"],"envs":null,"public":true,"log_level":"debug","cron":""}

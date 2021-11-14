@@ -8,14 +8,8 @@ import 'dart:async';
 import 'dart:convert';
 
 Future<Majors> getMajors(String Industry) async {
-  final response = await http.post(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums'),
-    headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
-    },
-    body: jsonEncode(<String, String>{
-      'industry': Industry,
-    }),
+  final response = await http.get(
+    Uri.parse('http://10.0.2.2:5000/majors')
   );
 
   if (response.statusCode == 201) {
@@ -57,19 +51,24 @@ class _ChooseMajor extends State<ChooseMajor> {
         appBar: AppBar(
           title: const Text("Choose Major"),
         ),
-        body: Center(
+        body: FutureBuilder(
+          future: getMajors(gpassedIndustry),
+          builder: (BuildContext context, AsyncSnapshot<Majors> snapshot) {
+            if (snapshot.hasData) {
+              Majors? major = snapshot.data;
+              return Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
                 ElevatedButton(
                   onPressed: () {
-                    gpassedMajor = '${_futureMajors.major1}';
+                    gpassedMajor = major!.major1;
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const Positions()),
                     );
                   },
-                  child: Text('${_futureMajors?.major1}'),
+                  child: Text(major!.major1),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -78,7 +77,7 @@ class _ChooseMajor extends State<ChooseMajor> {
                       MaterialPageRoute(builder: (context) => const Positions()),
                     );
                   },
-                  child: Text('${_futureMajors?.major2}'),
+                  child: Text(major!.major2),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -87,11 +86,20 @@ class _ChooseMajor extends State<ChooseMajor> {
                       MaterialPageRoute(builder: (context) => const Positions()),
                     );
                   },
-                  child: Text('${_futureMajors?.major3}'),
+                  child: Text(major!.major3),
                 ),
               ]
           ),
-        )
+        );
+            }
+            else {
+              return Center(child: CircularProgressIndicator());
+            }
+          }
+          
+          )
+        
+        
     );
   }
 }

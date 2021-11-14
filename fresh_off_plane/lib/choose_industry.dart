@@ -50,7 +50,7 @@ class _ChooseIndustry extends State<ChooseIndustry> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ChooseMajor(passedIndustry: industry,)),
+                  MaterialPageRoute(builder: (context) => ChooseMajor()),
                 );
               },
               child: const Text("Next"),

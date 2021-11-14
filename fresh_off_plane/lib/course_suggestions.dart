@@ -11,8 +11,7 @@ class _CourseSuggestionsState extends State<CourseSuggestions> {
     return Scaffold (
         appBar: AppBar(
           title: const Text("Course suggester"),
-        ),
-        body:
+        )
     );
   }
 }
