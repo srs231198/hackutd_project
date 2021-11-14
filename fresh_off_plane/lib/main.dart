@@ -151,7 +151,7 @@ class LinksPage extends StatelessWidget {
                 '\n\n\n\n\n\n\n\n\n',
               ),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
+                style: ElevatedButton.styleFrom(primary: const Color(0xFF808080)),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -233,7 +233,7 @@ class Insurance extends StatelessWidget {
                 '\n\n\n\n\n\n\n',
               ),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
+                style: ElevatedButton.styleFrom(primary: const Color(0xFF808080)),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -308,7 +308,7 @@ class Financial extends StatelessWidget {
                 '\n\n\n\n\n\n\n',
               ),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: const Color(0xFFe87500)),
+                style: ElevatedButton.styleFrom(primary: const Color(0xFF808080)),
                 onPressed: () {
                   Navigator.pop(context);
                 },
