@@ -1,14 +1,27 @@
 import requests
-import json
-import bs4 as bs
 
+class Nebula:
+    def __init__(self) -> None:
+        
+        self.header = {
+            "Authorization": "dd1h55UQUb8x5nQIPW2iJ1ABaIDx9iv7"
+        }
+    
+    def get_json_course_prefix(self, cf: str) -> str:
+        url = "https://api.utdnebula.com/v1/sections/search?course_prefix=" + cf
+        resp = requests.get(url=url, headers=self.header)
 
-header = {
-    "Authorization": "dd1h55UQUb8x5nQIPW2iJ1ABaIDx9iv7"
-}
+        return resp.text
+    
+    def get_json_term(self, term:str) -> str:
+        url = "https://api.utdnebula.com/v1/sections/search?term=" + term
+        resp = requests.get(url=url, headers=self.header)
 
-resp = requests.get("https://api.utdnebula.com/v1/sections/search?course_prefix=se", headers=header)
+        return resp.text
+    
+    def get_json_department(self, department:str) -> str:
+        url = "https://api.utdnebula.com/v1/sections/search?department=" + department
+        resp = requests.get(url=url, headers=self.header)
 
-with open("sp2018.txt", "r") as s:
-    y = json.loads("".join(s.readlines()))
-    print(y)
+        return resp.text
+            
