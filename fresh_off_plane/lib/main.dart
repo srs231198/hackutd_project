@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'majorIdeasIndustry.dart';
+import 'positions.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -299,7 +301,7 @@ class CourseHelper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Course helper"),
+          title: const Text("Course Finder"),
         ),
         body: Center(
           child: Column(
@@ -309,7 +311,7 @@ class CourseHelper extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Insurance()),
+                      MaterialPageRoute(builder: (context) => MajorIdeasIndustry()),
                     );
                   },
                   child: const Text("I need major ideas"),
@@ -318,7 +320,7 @@ class CourseHelper extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const Insurance()),
+                      MaterialPageRoute(builder: (context) => const Positions()),
                     );
                   },
                   child: const Text("I know my major, and I need course ideas"),
