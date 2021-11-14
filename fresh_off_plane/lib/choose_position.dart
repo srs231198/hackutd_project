@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'majorIdeasIndustry.dart';
+import 'choose_industry.dart';
 
 class Positions extends StatelessWidget {
   const Positions({Key? key}) : super(key: key);

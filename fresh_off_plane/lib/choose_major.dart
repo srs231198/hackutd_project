@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'majorIdeasIndustry.dart';
-import 'positions.dart';
+import 'choose_industry.dart';
+import 'choose_position.dart';
+import 'package:http/http.dart' as http;
 
 class MajorIdeas extends StatefulWidget {
   final String? passedString;

@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'majorIdeas.dart';
+import 'choose_major.dart';
 
-class MajorIdeasIndustry extends StatefulWidget {
+class ChooseIndustry extends StatefulWidget {
   @override
-  _MajorIdeasIndustryState createState() => _MajorIdeasIndustryState();
+  _ChooseIndustryState createState() => _ChooseIndustryState();
 }
 
-class _MajorIdeasIndustryState extends State<MajorIdeasIndustry> {
-  String dropdownValue = 'Information Technology';
+class _ChooseIndustryState extends State<ChooseIndustry> {
+  String industry = 'Information Technology';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold (
       appBar: AppBar(
-        title: const Text("Help me choose a major"),
+        title: const Text("Course suggester"),
       ),
       body: Center(
         child: Column(
@@ -22,7 +22,7 @@ class _MajorIdeasIndustryState extends State<MajorIdeasIndustry> {
           children: <Widget> [
             const Text("What industry do you want to go into?"),
             DropdownButton<String>(
-              value: dropdownValue,
+              value: industry,
               icon: const Icon(Icons.arrow_downward),
               iconSize: 24,
               elevation: 16,
@@ -33,7 +33,7 @@ class _MajorIdeasIndustryState extends State<MajorIdeasIndustry> {
               ),
               onChanged: (String? newValue) {
                 setState(() {
-                  dropdownValue = newValue!;
+                  industry = newValue!;
                 });
               },
               items: <String>["Information Technology", "Healthcare", "Education"]
@@ -48,7 +48,7 @@ class _MajorIdeasIndustryState extends State<MajorIdeasIndustry> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MajorIdeas(passedIndustry: dropdownValue, passedString: 'temp',)),
+                  MaterialPageRoute(builder: (context) => ChooseMajor(passedIndustry: industry,)),
                 );
               },
               child: const Text("Next"),
