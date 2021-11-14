@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+var courseNames = ['broccoli', 'cabbage'];
+
 class CourseSuggestions extends StatefulWidget {
   @override
   _CourseSuggestionsState createState() => _CourseSuggestionsState();
