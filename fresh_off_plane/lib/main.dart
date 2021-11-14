@@ -133,7 +133,7 @@ class LinksPage extends StatelessWidget {
                 child: const Text('Bursar Office'),
               ),
               const Text(
-                '\n\n\n\n\n\n\n\n\n\n\n',
+                '\n\n\n\n\n\n\n\n\n',
               ),
               ElevatedButton(
                 onPressed: () {
