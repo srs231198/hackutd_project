@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'choose_major.dart';
+import 'globals.dart';
 
 class ChooseIndustry extends StatefulWidget {
   @override
@@ -34,6 +35,7 @@ class _ChooseIndustry extends State<ChooseIndustry> {
               onChanged: (String? newValue) {
                 setState(() {
                   industry = newValue!;
+                  gpassedIndustry = newValue!;
                 });
               },
               items: <String>["Information Technology", "Healthcare", "Education"]
