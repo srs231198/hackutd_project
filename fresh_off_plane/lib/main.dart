@@ -298,44 +298,6 @@ class Financial extends StatelessWidget {
   }
 }
 
-class CourseHelper extends StatelessWidget {
-  const CourseHelper({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Course Finder"),
-        ),
-        body: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ChooseIndustry()),
-                    );
-                  },
-                  child: const Text("I need major ideas"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Positions()),
-                    );
-                  },
-                  child: const Text("I know my major, and I need course ideas"),
-                ),
-              ]
-          ),
-        )
-    );
-  }
-}
-
 _launchGalaxyBrowser() async {
   const url = 'https://www.utdallas.edu/galaxy/';
   if (await canLaunch(url)) {

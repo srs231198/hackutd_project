@@ -5,6 +5,7 @@ class CourseSuggestions extends StatefulWidget {
   @override
   _CourseSuggestionsState createState() => _CourseSuggestionsState();
 }
+
 class _CourseSuggestionsState extends State<CourseSuggestions> {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,6 @@ class _CourseSuggestionsState extends State<CourseSuggestions> {
           }
           final int index = i ~/ 2;
           return _buildRow(courseNames[index]);
-          }
         }
       ),
     );
