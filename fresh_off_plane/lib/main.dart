@@ -60,7 +60,11 @@ class FirstRoute extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
+<<<<<<< HEAD
                       MaterialPageRoute(builder: (context) => const ChooseIndustry()),
+=======
+                      MaterialPageRoute(builder: (context) => ChooseIndustry()),
+>>>>>>> cf6ab5f0f8e32ad8b26fcdf9fee0cdda40d89c2e
                     );
                   },
                 ),
@@ -311,7 +315,7 @@ class CourseHelper extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MajorIdeasIndustry()),
+                      MaterialPageRoute(builder: (context) => ChooseIndustry()),
                     );
                   },
                   child: const Text("I need major ideas"),

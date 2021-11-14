@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fresh_off_plane">
+<<<<<<< HEAD
     <!-- Required to fetch data from the internet. -->
+=======
+>>>>>>> cf6ab5f0f8e32ad8b26fcdf9fee0cdda40d89c2e
     <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="Fresh Off The Plane"
