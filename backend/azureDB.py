@@ -45,14 +45,4 @@ def get_majors(industry):
     cursor.close()
     
     return val
-
-if __name__ == "__main__":
-
-    ECS_majors = ["CS", "SE", "ME", "EE", "DS", "ITS"]
-    roles = ["IC", "Supervisor", "Manager", "Executive"]
-    industries = ["Construction", "Technology", "Space", "Information Technology", "Robotics"]
-
-    print(get_courses("Technology", "SE", "IC"))
-    print("%%%%%%%%%%%%%%%%%%%%%")
-    print(get_majors("Robotics"))
     
